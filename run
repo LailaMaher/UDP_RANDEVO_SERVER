@@ -1,0 +1,4 @@
+
+g++ -std=c++11 -pthread header.h Request.h Request.cpp User.h User.cpp Server.h Server.cpp server_main.cpp -o server
+
+g++ -std=c++11 -pthread header.h Request.h Request.cpp Client.h Client.cpp client_main.cpp -o client
