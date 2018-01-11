@@ -55,8 +55,6 @@ User* Server::getByIP(string ip){
 }
 
 Request Server::AcceptRequest(){
-
-	cout << "New Request" << endl;
 	
 	char buffer[1024];
 
@@ -121,6 +119,8 @@ User* Server::isExist(int ID){
 
 void Server::HandleRequest(Request* new_request){
 
+	cout << "Handle new request" << endl;
+
 	char token = new_request->getCode();
 	string peer_ID;
 	User* peer = NULL; 
@@ -158,6 +158,8 @@ void Server::HandleRequest(Request* new_request){
 
 		default:
 			cout << "invalid token" << endl;
+			cout << "code :" << new_request->getCode() << endl;
+			cout << "body :" << new_request->getBody() << endl;
 			break;
 	}
 

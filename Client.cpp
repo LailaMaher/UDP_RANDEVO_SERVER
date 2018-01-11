@@ -51,12 +51,16 @@ void Client::SendStream(string data, bool DATA){
     char buffer[1024];
     strcpy(buffer, data.c_str());
 
-    if(DATA)
+    if(DATA){
+    	cout << "Data sent to peer" << endl;
     	if( sendto(getDescriptor(), buffer, 1023, 0, (struct sockaddr*)&peer_address, sizeof(peer_address)) < 0 )
     		perror("SEND STREAM TO PEER FAILED");
-    else 
+    }
+    else {
+    	cout << "Control to server" << endl;
     	if( sendto(getDescriptor(), buffer, 1023, 0, (struct sockaddr*)&server_address, sizeof(server_address)) < 0 )
     		perror("SEND STREAM TO SERVER FAILED");
+    }
 
 }
 
