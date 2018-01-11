@@ -4,8 +4,11 @@
 Request::Request(sockaddr_in address, string request){
 
 	this->address = address;
+	cout << "request " << request << endl;
 	this->code = request[0];
+	cout << "code " << code << endl;
 	this->body = request.substr(1, request.length() - 1);
+	cout << "body " << body << endl;
 	len = sizeof(address);
 }
 
