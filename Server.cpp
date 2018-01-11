@@ -55,6 +55,9 @@ User* Server::getByIP(string ip){
 }
 
 Request Server::AcceptRequest(){
+
+	cout << "New Request" << endl;
+	
 	char buffer[1024];
 
 	struct sockaddr_in cli_address;
