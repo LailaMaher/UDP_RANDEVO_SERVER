@@ -68,6 +68,8 @@ Request* Server::AcceptRequest(){
 
     Request* new_request = new Request(cli_address, data);
 
+    cout << "Request created" << endl;
+
 	return new_request;
 }
 
@@ -122,6 +124,8 @@ void Server::HandleRequest(Request* new_request){
 	cout << "Handle new request" << endl;
 
 	char token = new_request->getCode();
+	cout << "current token " << token << endl;
+
 	string peer_ID;
 	User* peer = NULL; 
 	User* client = NULL;

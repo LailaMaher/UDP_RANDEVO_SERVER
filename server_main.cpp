@@ -9,6 +9,7 @@ void* Work(void* user_v){
 
 	Request* new_request = (Request*)new_request;
 	Server::instance()->HandleRequest(new_request);
+	cout << "deleting Request" << endl;
 	delete new_request;
 	return NULL;
 }
