@@ -38,7 +38,7 @@ public:
 
 	void createSocket(int);
 
-	Request AcceptRequest();
+	Request* AcceptRequest();
 	void HandleRequest(Request*);
 
 	void addUser(User*);

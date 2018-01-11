@@ -9,6 +9,7 @@ void* Work(void* user_v){
 
 	Request* new_request = (Request*)new_request;
 	Server::instance()->HandleRequest(new_request);
+	delete new_request;
 	return NULL;
 }
 
@@ -26,8 +27,8 @@ int main(int argc, char const *argv[])
 
 	while(true){
 		
-		Request new_request = tcp->AcceptRequest();
-		int err = pthread_create(&pid[cnt++], NULL, &Work, &new_request);
+		Request* new_request = tcp->AcceptRequest();
+		int err = pthread_create(&pid[cnt++], NULL, &Work, new_request);
 
 	}
 

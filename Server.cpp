@@ -54,7 +54,7 @@ User* Server::getByIP(string ip){
 	return NULL;
 }
 
-Request Server::AcceptRequest(){
+Request* Server::AcceptRequest(){
 	
 	char buffer[1024];
 
@@ -66,7 +66,7 @@ Request Server::AcceptRequest(){
 
     string data(buffer);
 
-    Request new_request(cli_address, data);
+    Request* new_request = new Request(cli_address, data);
 
 	return new_request;
 }
